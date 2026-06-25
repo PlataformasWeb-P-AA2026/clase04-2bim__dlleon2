@@ -7,16 +7,19 @@ body {
 
 }
 
+
 section {
-  background: #F4AB14;
+  background: #ebe8e3;
 }
 
 header {
   background: #034275;
   color: #FFF;
 }
+
 /* manejo de las características de la etiqueta table*/
-th, td {
+th,
+td {
   padding: 15px;
   border-bottom: 1px solid black;
 }
@@ -25,7 +28,8 @@ tr:hover {
   background-color: #258EAD;
 }
 
-input[type=text], input[type=number] {
+input[type=text],
+input[type=number] {
   width: 25%;
   padding: 5px 5px;
   box-sizing: border-box;
@@ -38,9 +42,10 @@ input[type=text|number]:focus {
 label {
   padding: 12px 10px;
 }
+
 /* manejo de las características de las clases*/
 
-.colorceldsprintfa{
+.colorceldsprintfa {
   background: #9999FF;
   color: #000000;
   font-family: Arial, Helvetica, sans-serif;
@@ -48,7 +53,7 @@ label {
   font-weight: bold;
 }
 
-.miformulario{
+.miformulario {
   width: 40%;
 }
 
@@ -57,25 +62,24 @@ label {
 /*
  Tomado de http://codigoprogramacion.com/cursos/html/como-hacer-un-menu-horizontal-con-html5-y-css3.html
  */
-.top_menu ul
-{
-  list-style:none;
-  float:left;
+.top_menu ul {
+  list-style: none;
+  float: left;
   padding: 5px;
-  width:95%;
+  width: 95%;
 }
 
-.top_menu ul li a
-{
-  float:left;
-  margin-right:10px;
-  margin-bottom:5px;
+.top_menu ul li a {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 5px;
   text: #FFF;
   color: green;
 
 }
 
-footer{
-  background: #5E5E5E;
+
+footer {
+  background: #0d0ba6;
   color: #FFF;
 }
