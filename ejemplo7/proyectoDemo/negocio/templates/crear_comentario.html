@@ -1,0 +1,21 @@
+{% extends "master.html" %}
+
+{% block title %}Agregar Comentario{% endblock %}
+
+{% block content %}
+<h2>Agregar Comentario</h2>
+
+{% if user.is_authenticated %}
+<form action="" method="post">
+  {% csrf_token %}
+  {{ formulario.as_p }}
+  <p>
+    <input type="submit" value="Guardar Comentario" />
+    <a href="{% url 'lista_comentarios' %}">Cancelar</a>
+  </p>
+</form>
+{% else %}
+<p>Debes <a href="{% url 'login' %}">iniciar sesión</a> para comentar.</p>
+{% endif %}
+
+{% endblock %}

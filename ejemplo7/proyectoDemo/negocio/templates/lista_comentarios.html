@@ -1,0 +1,43 @@
+{% extends "master.html" %}
+
+{% block title %}Comentarios{% endblock %}
+
+{% block content %}
+<h2>Comentarios
+  <a href="{% url 'crear_comentario' %}">+</a>
+</h2>
+<h3>Total de comentarios: {{ numero }}</h3>
+
+<table id="tabla_comentarios">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Usuario</th>
+      <th>Comentario</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for c in comentarios %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>{{ c.usuario.username }}</td>
+      <td>{{ c.comentario }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+      <td colspan="3">No hay comentarios aún.</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#tabla_comentarios').DataTable({
+      language: {
+        url: 'https://cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json'
+      }
+    });
+  });
+</script>
+{% endblock %}

@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Restaurante(models.Model):
     nombre = models.CharField(max_length=100)
@@ -35,3 +36,12 @@ class Plato(models.Model):
         return "%s %s %.2f - (%s)" % (self.nombre_plato, self.descripcion,
                                 self.precio_plato,
                                 self.chef.nombres)
+class comentario_general(models.Model):
+    usuario = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE
+    )
+    comentario = models.TextField(max_length=300)
+
+    def __str__(self):
+        return "%s %s" % (self.usuario, self.comentario)
