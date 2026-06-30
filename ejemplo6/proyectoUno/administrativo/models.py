@@ -34,3 +34,11 @@ class NumeroTelefonico(models.Model):
 
     def __str__(self):
         return "%s %s" % (self.telefono, self.tipo)
+
+class comentarios_user(models.Model):
+    usuario = models.CharField(max_length=30)
+    comentario = models.CharField(max_length=30)
+
+    def __str__(self):
+        return "%s %s" % (self.usuario, self.comentario)
+

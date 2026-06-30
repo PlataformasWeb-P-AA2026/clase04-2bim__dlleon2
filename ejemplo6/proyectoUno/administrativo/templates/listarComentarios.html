@@ -1,0 +1,36 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Listado de Comentarios
+{% endblock %}
+
+{% block content %}
+<h3>Número de comentarios: {{ numero_comentarios }}</h3>
+
+<table id="tabla_datos" class="cell-border">
+  <thead>
+    <tr>
+      <th>Usuario</th>
+      <th>Comentario</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for c in comentarios %}
+  <tr>
+    <td>{{ c.usuario }}</td>
+    <td>{{ c.comentario }}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+<div class="main-blue-button" style="margin-top: 20px;">
+  <a href="{% url 'crear_comentario' %}">Agregar Comentario</a>
+</div>
+
+<script type="text/javascript">
+  $(document).ready( function () {
+    $('#tabla_datos').DataTable();
+  });
+</script>
+{% endblock %}
