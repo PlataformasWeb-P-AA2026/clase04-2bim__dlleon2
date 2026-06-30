@@ -24,7 +24,7 @@ class NumeroTelefonico(models.Model):
     def __str__(self):
         return "%s %s" % (self.telefono, self.tipo)
     def obtener_operadora(self):
-        if self.telefono[:3] == '09':
+        if self.telefono[:3] == '097':
             return "Claro"
         elif self.telefono[:3] == '098':
             return "Movistar"
